@@ -1,0 +1,11 @@
+Model Information:
+* title:	Log 1
+* source:	https://sketchfab.com/3d-models/log-1-fc5b54e402c54316a32a24bd926af100
+* author:	madhumk0709m (https://sketchfab.com/madhumk0709m)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Log 1" (https://sketchfab.com/3d-models/log-1-fc5b54e402c54316a32a24bd926af100) by madhumk0709m (https://sketchfab.com/madhumk0709m) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
