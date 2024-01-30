@@ -4,7 +4,6 @@
  * FACEBOOK: https://www.facebook.com/themefisher
  * GITHUB: https://github.com/themefisher/
  */
-
 (function ($) {
 	'use strict';
 
@@ -141,3 +140,70 @@ requireCounter.forEach((el) => {
     // } // Uncomment this to stop the counter after first run
   });
 });
+
+
+var cards3D = document.getElementsByClassName("3dhover");
+window.onload = function(){
+  for(let i=0; i<cards3D.length;i++){
+    cards3D[i].addEventListener('mousemove',e=>{
+      let currCard = e.currentTarget;
+      let mouseX = e.clientX;
+      let mouseY = e.clientY;
+      let degrees = 20;
+      let ry = 2*(mouseX- (currCard.getBoundingClientRect().left+(currCard.offsetWidth/2)))/(currCard.offsetWidth);
+       let rx = 2*(currCard.getBoundingClientRect().top+(currCard.offsetHeight/2)-mouseY)/(currCard.offsetHeight);
+      currCard.style.transform = "rotate3d("+rx+","+ry+",0,"+degrees+"deg) scale(1.1)";
+      currCard.style.boxShadow = 3*-ry+"px "+3*rx+"px 5px 3px rgba(0,0,0,0.4)";
+      currCard.getElementsByClassName("card-number")[0].style.textShadow = 4*-ry+"px "+3*rx+"px 3px rgba(0,0,0,0.8)";
+    });
+    
+    cards3D[i].addEventListener('mouseout',e=>{
+      let currCard = e.currentTarget;
+      // console.log(currCard);
+      currCard.style.transform = "";
+      currCard.style.boxShadow = "none";
+      currCard.getElementsByClassName("card-number")[0].style.textShadow = "0px 0px 4px rgba(0,0,0,0.8)";
+    });
+  }
+}
+
+// document.addEventListener("DOMContentLoaded", function () {
+// 	// Target the list items
+// 	const listItems = document.querySelectorAll('.navbar-nav .nav-item');
+
+// 	// Use GSAP to create a fade-in animation for each list item
+// 	gsap.from(listItems, {
+// 	  opacity: 0,
+// 	  y: 20,
+// 	  stagger: 0.2, // Stagger the animations for a nice effect
+// 	  duration: 1, // Animation duration in seconds
+// 	  ease: "power2.out", // Easing function
+// 	});
+//   });
+// document.addEventListener("DOMContentLoaded", function () {
+// 	gsap.from(".menu-items li a", { opacity: 0, y: 20, duration: 2, stagger: 0.5,delay:0.9, ease: "power2.out" });
+//   });
+document.addEventListener("DOMContentLoaded", function () {
+    // Select the navigation items
+    const navItems = document.querySelectorAll('.navbar-nav li a');
+
+    // GSAP animation for the navigation items
+    gsap.from(navItems, {
+      duration: 1,
+      opacity: 0,
+      y: 30,
+      stagger: 0.2,
+      ease: "power2.out",
+    });
+
+    // Additional animation for the "Get in touch with us" button
+    const touchButton = document.querySelector('.non');
+
+    gsap.from(touchButton, {
+      duration: 1,
+      opacity: 0,
+      x: 30,
+      ease: "power2.out",
+    });
+	console.log("Animation applied successfully");
+  });
